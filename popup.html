@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Manager </title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h2><i class="fas fa-lock"></i> Password Manager</h2>
+    <button id="themeToggle" class="theme-button">
+      <i class="fas fa-moon"></i>
+    </button>
+    
+    <form id="masterPasswordForm" class="master-password-form">
+      <h3><i class="fas fa-key"></i> Enter Master Password</h3>
+      <div class="form-group">
+        <div class="password-input-group">
+          <input type="password" id="masterPassword" required placeholder="Enter your master password">
+          <button type="button" class="toggle-password" title="Show/Hide Password">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <button type="submit"><i class="fas fa-unlock-alt"></i> Unlock</button>
+        <button type="button" id="forgotPassword" class="forgot-password">
+          <i class="fas fa-question-circle"></i> Forgot Password?
+        </button>
+      </div>
+    </form>
+
+    <!-- Add Recovery Form -->
+    <div id="recoveryForm" class="recovery-form" style="display: none;">
+      <h3><i class="fas fa-shield-alt"></i> Account Recovery</h3>
+      <div class="form-group">
+        <input type="email" id="recoveryEmail" placeholder="Enter your recovery email">
+        <select id="securityQuestion">
+          <option value="">Select Security Question</option>
+          <option value="pet">What was your first pet's name?</option>
+          <option value="school">What was your first school name?</option>
+          <option value="city">What city were you born in?</option>
+        </select>
+        <input type="text" id="securityAnswer" placeholder="Your answer">
+        <button type="button" id="recoverAccount"><i class="fas fa-undo"></i> Recover Account</button>
+        <button type="button" id="backToLogin" class="secondary-button">
+          <i class="fas fa-arrow-left"></i> Back to Login
+        </button>
+      </div>
+    </div>
+
+    <div id="mainContent" style="display: none">
+      <div class="form-group">
+        <div class="input-icon">
+          <i class="fas fa-globe"></i>
+          <input type="text" id="website" placeholder="Website URL">
+        </div>
+        <div class="input-icon">
+          <i class="fas fa-user"></i>
+          <input type="text" id="username" placeholder="Username">
+        </div>
+        <div class="input-icon password-input-group">
+          <i class="fas fa-key"></i>
+          <input type="password" id="password" placeholder="Password">
+          <div class="password-strength-meter">
+            <div class="strength-bar"></div>
+            <span class="strength-text"></span>
+          </div>
+          <button type="button" class="toggle-password" title="Show/Hide Password">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+        <button id="saveCredentials"><i class="fas fa-save"></i> Save Credentials</button>
+      </div>
+
+      <div class="password-generator">
+        <h3><i class="fas fa-magic"></i> Password Generator</h3>
+        <div class="generator-controls">
+          <input type="number" id="passwordLength" value="12" min="8" max="32">
+          <button id="generatePassword"><i class="fas fa-sync"></i> Generate</button>
+        </div>
+        <div class="password-strength">
+          <div class="strength-indicator"></div>
+        </div>
+      </div>
+
+      <div class="stored-credentials">
+        <div class="credentials-header">
+          <h3><i class="fas fa-vault"></i> Stored Credentials</h3>
+          <button id="downloadCredentials" class="secondary-button">
+            <i class="fas fa-download"></i> Export
+          </button>
+        </div>
+        <div id="credentialsList"></div>
+      </div>
+    </div>
+
+    <div class="owner-info">
+     
+      
+      <div class="developer">
+        <i class="fas fa-code"></i> Developed by Ayush Dwivedi
+      </div>
+      <div class="version">Version 1.0.1</div>
+      <div class="copyright">
+        &copy; 2025 Password Manager . All rights reserved.
+      </div>
+    </div>
+  </div>
+  <script src="errorHandler.js"></script>
+  <script src="generator.js"></script>
+  <script src="vault.js"></script>
+  <script src="auth.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html> 
