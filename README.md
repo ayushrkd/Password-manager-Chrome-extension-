@@ -3,6 +3,7 @@
 A secure and user-friendly Chrome extension designed to manage passwords effortlessly while maintaining strong encryption and data protection.
 
 ## Features
+edit for feature branch
 
 ### Security
 - Master password protection for secure vault access
